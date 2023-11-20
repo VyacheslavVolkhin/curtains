@@ -1,44 +1,369 @@
 /* ----------------------------------- *\
 			items styles
 \* ----------------------------------- */
-.item-photo {
+.item-tile-category {
+    background: #FAFAFA;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 240px;
+    height: 100%;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    color: var(--clr-base);
+    &:hover {
+        color: var(--clr-base);
+    }
+    .tile-photo {
+        aspect-ratio: 320/240;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 73.5%;
+    }
+    .tile-title {
+        display: block;
+        max-width: 100%;
+        text-align: right;
+        font-size: 18px;
+        line-height: 1.35;
+        font-weight: 500;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 3;
+        .ft;
+    }
+}
+.item-tile-catalog {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 1.35;
+    .tile-photo-wrap {
+        display: block;
+        width: 100%;
+        flex-shrink: 0;
+    }
+    .tile-title-wrap {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        padding: 15px 0;
+    }
+    .tile-actions-wrap {
+        display: block;
+        width: 100%;
+        flex-shrink: 0;
+        text-align: center;
+    }
+    .tile-title {
+        display: block;
+        width: 100%;
+        flex-shrink: 0;
+        text-align: center;
+        font-weight: 400;
+        margin: 0;
+    }
+    .tile-photo {
+        border-radius: 15px 15px 0 0;
+        aspect-ratio: 320/280;
+    }
+    .btn {
+        padding-left: 19px;
+        padding-right: 19px;
+        z-index: 8;
+    }
+}
+.item-tile-logo {
+    display: block;
+    position: relative;
+    line-height: 1;
+    .tile-photo {
+        aspect-ratio: 1;
+        border-radius: 15px;
+        border: 1px solid #F9F9F9;
+    }
+}
+.item-tile-team {
+    display: block;
+    position: relative;
+    text-align: center;
+    line-height: 1.35;
+    .tile-photo {
+        width: 225px;
+        margin: 0 auto 15px auto;
+        border-radius: 50%;
+        max-width: 100%;
+    }
+}
+.item-tile-review {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    line-height: 1;
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+.item-tile-step {
+    display: flex;
+    line-height: 1.35;
+    align-items: center;
+    .tile-number {
+        display: block;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        flex-shrink: 0;
+        border: 1px solid var(--clr-att-light);
+        font-size: 28px;
+        font-weight: 500;
+        color: var(--clr-att);
+        .ft;
+    }
+    .tile-title-wrap {
+        display: block;
+        flex: 1;
+        padding-left: 10px;
+    }
+}
+.item-tile-plus {
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.35;
+    .tile-info-wrap {
+        flex: 1;
+        padding-left: 10px;
+    }
+    .tile-ico {
+        width: 42px;
+        height: 42px;
+        flex-shrink: 0;
+    }
+    .tile-title {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.35;
+        margin: 0 0 10px 0;
+        .ft;
+    }
+}
+.item-tile-photo {
+    display: block;
+    position: relative;
+    &:hover {
+        .tile-photo {
+            &:before, &:after {
+                opacity: 1;
+            }
+        }
+    }
+    .tile-photo {
+        border-radius: 11px;
+        aspect-ratio: 320/430;
+        &:before {
+            content: "";
+            display: block !important;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0;
+            background: fade(#000, 20);
+            transition: opacity ease 0.2s;
+            opacity: 0;
+            z-index: 2;
+        }
+        &:after {
+            content: "";
+            display: none;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: url(../img/icons/play.svg) center no-repeat;
+            background-size: 31.2% auto;
+            opacity: 0;
+            z-index: 3;
+            transition: opacity ease 0.2s;
+        }
+    }
+    &.tile-video {
+        .tile-photo {
+            &:after {
+                display: block;
+            }
+        }
+    }
+}
+.item-tile-portfolio {
+    display: block;
+    position: relative;
+    &:hover {
+        .tile-photo {
+            &:after {
+                opacity: 1;
+            }
+        }
+        .btn-action-ico {
+            opacity: 1;
+        }
+    }
+    .tile-photo {
+        border-radius: 11px;
+        aspect-ratio: 320/235;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-radius: 10px;
+            background: rgba(153, 24, 80, 0.45);
+            opacity: 0;
+            transition: opacity ease 0.2s;
+        }
+    }
+    .btn-action-ico {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        opacity: 0;
+        transition: all ease 0.2s;
+        margin: auto;
+    }
+}
+.item-tile-info {
+    display: flex;
+    align-items: center;
+    .tile-ico {
+        width: 45px;
+        height: 45px;
+        flex-shrink: 0;
+        text-align: center;
+        line-height: 45px;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: var(--clr-att-dark);
+        .ft;
+    }
+    .tile-title {
+        display: block;
+        padding-left: 15px;
+        flex: 1;
+    }
+}
+:is([class^="item-tile"]) {
+    &:hover {
+        .elm-photo, .tile-photo {
+            img {
+                transform: scale(1.03);
+            }
+        }
+    }
+}
+.elm-photo, .tile-photo {
     display: block;
     position: relative;
     overflow: hidden;
     text-decoration: none;
     line-height: 1;
+    //transform: translateZ(0);
+    &.photo-main {
+        border: 1px solid #f00;
+        width: 300px;
+        height: 300px;
+    }
     &:before {
         content: "";
-        display: block;
+        display: none;
         padding-top: 100%;
     }
     img {
         display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
+        position: relative;
         width: 100%;
+        transition: all ease-out 1s;
     }
-    &.photo-full {
+    &.photo-cover {
         &:before {
-            display: none;
+            display: block;
         }
         img {
-            position: relative;
-            top: auto;
-            bottom: auto;
-            left: auto;
-            right: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &.photo-contain {
+        &:before {
+            display: block;
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
         }
     }
 }
-.elm-ico, .button-ico, .menu-ico, .frm-ico {
+@supports (aspect-ratio: 1) {
+    .elm-photo, .tile-photo {
+        &:not(.photo-cover, .photo-contain) {
+            aspect-ratio: inherit !important;
+        }
+    }
+    .photo-cover, .photo-contain {
+        aspect-ratio: 1;
+        &:before {
+            display: none !important;
+        }
+    }
+}
+.elm-price, .tile-price {
+    white-space: nowrap;
+    &.price-old {
+        text-decoration: line-through;
+    }
+}
+[data-unit] {
+    &:after {
+        content: attr(data-unit);
+        font-family: 'Arial', 'Roboto', 'Open Sans', sans-serif;
+    }
+}
+.elm-ico, .button-ico, .menu-ico, .frm-ico, .tab-ico, .tile-ico, .lbl-ico {
     display: block;
     position: relative;
     overflow: hidden;
     width: 40px;
     height: 40px;
-    img, .i, svg {
+    img, [class*="icon-"], .i, svg {
         display: block;
         position: absolute;
         top: 0;
@@ -48,5 +373,96 @@
         margin: auto;
         max-width: 100%;
         max-height: 100%;
+    }
+    &.ico-main {
+        border-radius: 50%;
+        background-color: var(--clr-att-light);
+    }
+}
+.elm-overlay {
+    display: none;
+    animation: fadein ease 0.2s;
+    background: fade(#000, 80);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 120;
+    &.active {
+        display: block;
+    }
+}
+@media (min-width: 1024px) {
+    .item-tile-category {
+        min-height: 320px;
+        padding: 3rem;
+        .tile-title {
+            font-size: 2.4rem;
+        }
+    }
+    .item-tile-catalog {
+        font-size: 2rem;
+        .tile-photo {
+            aspect-ratio: 320/280;
+        }
+        .tile-title-wrap {
+            padding: 15px 0;
+        }
+        .btn {
+            padding: 15px 19px;
+            font-size: 16px;
+            min-height: 0;
+        }
+    }
+    .item-tile-logo {
+        .tile-photo {
+            border-radius: 15px;
+        }
+    }
+    .item-tile-step {
+        .tile-number {
+            width: 9rem;
+            height: 9rem;
+            line-height: 8.8rem;
+            font-size: 6rem;
+        }
+        .tile-title-wrap {
+            padding-left: 3rem;
+        }
+    }
+    .item-tile-team {
+        .tile-photo {
+            margin-bottom: 3rem;
+        }
+    }
+    .item-tile-plus {
+        .tile-ico {
+            width: 9rem;
+            height: 9rem;
+        }
+        .tile-info-wrap {
+            padding-left: 3rem;
+        }
+        .tile-title {
+            font-size: 2.4rem;
+        }
+    }
+    .item-tile-portfolio {
+        .tile-photo {
+            border-radius: 15px;
+            &:after {
+                border-radius: 15px;
+                display: none;
+            }
+        }
+    }
+    .item-tile-info {
+        .tile-ico {
+            width: 8.5rem;
+            height: 8.5rem;
+            font-size: 2.4rem;
+            line-height: 8.5rem;
+        }
     }
 }

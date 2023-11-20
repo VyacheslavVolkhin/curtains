@@ -1,0 +1,339 @@
+/* ----------------------------------- *\
+			inputs elements styles
+\* ----------------------------------- */
+.form-input[placeholder] {
+    text-overflow: ellipsis;
+}
+.form-input {
+    text-overflow: ellipsis;
+    height: 46px;
+    border-radius: 23px;
+    border: 1px solid var(--clr-att);
+    padding: 0 10px 0 24px;
+    font-size: 14px;
+    color: var(--clr-base);
+    background-color: transparent;
+}
+textarea.form-input {
+
+}
+select.form-input {
+    display: block;
+    text-overflow: ellipsis;
+    width: 100%;
+    padding-right: 30px;
+    background-image: url(../img/icons/arrow-select.svg);
+    background-position: right 20px center;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    appearance: none!important;
+    line-height: 1em;
+    text-indent: 0.01px;
+    //text-overflow: '';
+    outline: none;
+    &.form-input-clear {
+        height: auto;
+        border: none;
+        min-height: 0;
+        border-radius: 0;
+        box-shadow: none;
+        width: auto;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 1em;
+        line-height: inherit;
+        padding: 0 16px 0 0;
+        color: inherit;
+        font-weight: bold;
+        background-image: url(../img/icons/arrow-select.png);
+        background-size: 8px auto;
+        background-repeat: no-repeat;
+        background-position: right center;
+    }
+}
+select::-ms-expand {
+    display: none;
+}
+//   <select class="form-input form-input-line" required>
+//       <option value="" disabled selected hidden>Выбрать</option>
+//       <option>Пункт списка</option>
+//   </select>
+select.form-input:required:invalid {
+    color: #ADADAD;
+}
+.btn {
+    height: auto;
+    padding: 12px 30px;
+    border-radius: 100px;
+    border: 1px solid var(--clr-att-second);
+    background: var(--clr-att-second);
+    box-shadow: 0px 15px 25px 0px rgba(209, 129, 158, 0.50);
+    font-size: 14px;
+    line-height: 1.35;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    &:hover {
+        background-color: var(--clr-att);
+        border-color: var(--clr-att);
+        color: #fff;
+    }
+    &.button-main {
+        white-space: normal;
+    }
+    &.button-border {
+        &:not(:hover) {
+            background-color: transparent;
+            color: #231f20;
+        }
+        &:hover, &.active {
+            background-color: var(--clr-att);
+            border-color: var(--clr-att);
+            .button-ico {
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+    .button-ico {
+        width: 24px;
+        height: 24px;
+        margin: 0 10px;
+        transition: all ease 0.2s;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+    .button-title {
+        &[data-title] {
+            &:before {
+                content: attr(data-title);
+            }
+        }
+    }
+    &.active {
+        .button-title {
+            &[data-title-active] {
+                &:before {
+                    content: attr(data-title-active);
+                }
+            }
+        }
+    }
+}
+.btn-action-ico {
+    min-width: 0;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 40px;height: 40px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    transition: all ease 0.2s;
+    flex-shrink: 0;
+    &:not(.btn) {
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+    &.btn {
+        min-width: 0;
+        min-height: 0;
+        padding: 0;
+        display: block;
+    }
+    &:before, &:after, [class*="icon-"], img, svg {
+        display: block;
+        position: absolute;
+        top: 0;bottom: 0;left: 0;right: 0;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+        transition: all ease 0.2s;
+    }
+    img, svg {
+        max-width: 24px;
+        max-height: 24px;
+    }
+    &:before, &:after {
+        content: "";
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 24px auto;
+    }
+    &:hover {
+        text-decoration: none;
+        &:not(.btn) {
+            background: none;
+            box-shadow: none;
+        }
+    }
+    &.ico-hand {
+        &:before {
+            background-image: url(../img/icons/hand.svg);
+        }
+    }
+    &.ico-arrow {
+        z-index: 20;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        background: #F9F9F9;
+        border-radius: 50%;
+        &:before {
+            background-image: url(../img/icons/arrow-slider.svg);
+            background-size: 24px auto;
+        }
+        &:hover {
+            background-color: var(--clr-att-light);
+        }
+    }
+    &.ico-arrow-prev {
+        &:before {
+            .t-rotate(180deg);
+        }
+    }
+    &.ico-menu {
+        &:after, &:before {
+            width: 20px;
+            height: 14px;
+            border-top: 2px solid var(--clr-att-dark);
+            border-bottom: 2px solid var(--clr-att-dark);
+            margin: -7px 0 0 -10px;
+            top: 50%;
+            left: 50%;
+            right: auto;
+            bottom: auto;
+        }
+        &:before {
+            height: 2px;
+            margin-top: -1px;
+            border-top: none;
+        }
+        &.active {
+            &:after {
+                height: 2px;
+                margin-top: -1px;
+                border-top: none;
+                .t-rotate(-45deg);
+            }
+            &:before {
+                .t-rotate(45deg);
+            }
+        }
+    }
+    &.ico-close {
+        &:after, &:before {
+            width: 20px;
+            height: 2px;
+            top: 50%;
+            left: 50%;
+            bottom: auto;
+            right: auto;
+            margin: -1px 0 0 -10px;
+            background: var(--clr-base);
+        }
+        &:before {
+            .t-rotate(45deg);
+        }
+        &:after {
+            .t-rotate(-45deg);
+        }
+    }
+    &.button-soc {
+        img, svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    &.button-main {
+        border-radius: 50%;
+        background-color: var(--clr-att-light);
+        img, svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        &:hover {
+            background-color: var(--clr-att-second);
+        }
+    }
+    &.button-round {
+        width: 21rem;
+        height: 21rem;
+        border-radius: 50%;
+        background: fade(#FFCDD9, 10);
+        &:hover {
+            background: fade(#FFCDD9, 10);
+        }
+        &:before {
+            background-size: 36px auto;
+        }
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 13px;
+            bottom: 13px;
+            left: 13px;
+            right: 13px;
+            margin: auto;
+            border-radius: 50%;
+            background: fade(#FFCDD9, 20);
+        }
+        &:before {
+            background-color: fade(#FFCDD9, 65);
+            top: 29px;
+            bottom: 29px;
+            left: 29px;
+            right: 29px;
+            border-radius: 50%;
+            width: auto;
+            height: auto;
+        }
+    }
+}
+@media (max-width: 1023px) {
+    .btn-action-ico {
+        &.button-round {
+            width: 153px;
+            height: 153px;
+            &:after {
+                top: 9px;
+                bottom: 9px;
+                left: 9px;
+                right: 9px;
+            }
+            &:before {
+                top: 21px;
+                bottom: 21px;
+                left: 21px;
+                right: 21px;
+            }
+        }
+    }
+}
+@media (min-width: 1024px) {
+    .form-input {
+        height: 6.3rem;
+        border-radius: 4rem;
+        padding: 0 10px 0 2.9rem;
+        font-size: 14px;
+    }
+    .btn {
+        padding: 15px 4.5rem;
+        min-height: 6.3rem;
+    }
+}

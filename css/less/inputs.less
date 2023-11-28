@@ -81,6 +81,14 @@ select.form-input:required:invalid {
         border-color: var(--clr-att);
         color: #fff;
     }
+    &.button-light {
+        &:not(:hover) {
+            box-shadow: none;
+            border-color: var(--clr-att-light);
+            background-color: var(--clr-att-light);
+            color: var(--clr-att-dark);
+        }
+    }
     &.button-main {
         white-space: normal;
     }
